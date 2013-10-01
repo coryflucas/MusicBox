@@ -1,4 +1,4 @@
 MusicBox
 ========
 
-Cloud-base music player manager
+Cloud-based music player manager for OS X
