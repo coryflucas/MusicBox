@@ -18,6 +18,9 @@
 		8113148917FA59B20062E77E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8113146817FA59B20062E77E /* Cocoa.framework */; };
 		8113149117FA59B20062E77E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8113148F17FA59B20062E77E /* InfoPlist.strings */; };
 		8113149317FA59B20062E77E /* MusicBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8113149217FA59B20062E77E /* MusicBoxTests.m */; };
+		8113149D17FA5BB40062E77E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8113149C17FA5BB40062E77E /* WebKit.framework */; };
+		811314A117FA5D130062E77E /* GoogleMusicProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 811314A017FA5D130062E77E /* GoogleMusicProvider.m */; };
+		811314A417FA5FAE0062E77E /* MusicServiceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 811314A317FA5FAE0062E77E /* MusicServiceProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,11 @@
 		8113148E17FA59B20062E77E /* MusicBoxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MusicBoxTests-Info.plist"; sourceTree = "<group>"; };
 		8113149017FA59B20062E77E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8113149217FA59B20062E77E /* MusicBoxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicBoxTests.m; sourceTree = "<group>"; };
+		8113149C17FA5BB40062E77E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		8113149F17FA5D130062E77E /* GoogleMusicProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleMusicProvider.h; path = GoogleMusic/GoogleMusicProvider.h; sourceTree = "<group>"; };
+		811314A017FA5D130062E77E /* GoogleMusicProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleMusicProvider.m; path = GoogleMusic/GoogleMusicProvider.m; sourceTree = "<group>"; };
+		811314A217FA5FAE0062E77E /* MusicServiceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicServiceProvider.h; sourceTree = "<group>"; };
+		811314A317FA5FAE0062E77E /* MusicServiceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicServiceProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8113149D17FA5BB40062E77E /* WebKit.framework in Frameworks */,
 				8113146917FA59B20062E77E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +104,7 @@
 		8113146717FA59B20062E77E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8113149C17FA5BB40062E77E /* WebKit.framework */,
 				8113146817FA59B20062E77E /* Cocoa.framework */,
 				8113148717FA59B20062E77E /* XCTest.framework */,
 				8113146A17FA59B20062E77E /* Other Frameworks */,
@@ -115,11 +125,14 @@
 		8113146E17FA59B20062E77E /* MusicBox */ = {
 			isa = PBXGroup;
 			children = (
+				8113149E17FA5CD30062E77E /* GoogleMusic */,
 				8113147A17FA59B20062E77E /* AppDelegate.h */,
 				8113147B17FA59B20062E77E /* AppDelegate.m */,
 				8113147D17FA59B20062E77E /* MainMenu.xib */,
 				8113148017FA59B20062E77E /* Images.xcassets */,
 				8113146F17FA59B20062E77E /* Supporting Files */,
+				811314A217FA5FAE0062E77E /* MusicServiceProvider.h */,
+				811314A317FA5FAE0062E77E /* MusicServiceProvider.m */,
 			);
 			path = MusicBox;
 			sourceTree = "<group>";
@@ -152,6 +165,15 @@
 				8113148F17FA59B20062E77E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8113149E17FA5CD30062E77E /* GoogleMusic */ = {
+			isa = PBXGroup;
+			children = (
+				8113149F17FA5D130062E77E /* GoogleMusicProvider.h */,
+				811314A017FA5D130062E77E /* GoogleMusicProvider.m */,
+			);
+			name = GoogleMusic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +275,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8113147C17FA59B20062E77E /* AppDelegate.m in Sources */,
+				811314A117FA5D130062E77E /* GoogleMusicProvider.m in Sources */,
+				811314A417FA5FAE0062E77E /* MusicServiceProvider.m in Sources */,
 				8113147517FA59B20062E77E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
