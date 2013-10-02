@@ -20,7 +20,8 @@
 		8113149317FA59B20062E77E /* MusicBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8113149217FA59B20062E77E /* MusicBoxTests.m */; };
 		8113149D17FA5BB40062E77E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8113149C17FA5BB40062E77E /* WebKit.framework */; };
 		811314A117FA5D130062E77E /* GoogleMusicProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 811314A017FA5D130062E77E /* GoogleMusicProvider.m */; };
-		811314A417FA5FAE0062E77E /* MusicServiceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 811314A317FA5FAE0062E77E /* MusicServiceProvider.m */; };
+		811314A417FA5FAE0062E77E /* BaseMusicServiceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 811314A317FA5FAE0062E77E /* BaseMusicServiceProvider.m */; };
+		811314AD17FBA9270062E77E /* AppleMediaKeyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 811314AB17FBA9270062E77E /* AppleMediaKeyController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +57,12 @@
 		8113149C17FA5BB40062E77E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8113149F17FA5D130062E77E /* GoogleMusicProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleMusicProvider.h; path = GoogleMusic/GoogleMusicProvider.h; sourceTree = "<group>"; };
 		811314A017FA5D130062E77E /* GoogleMusicProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleMusicProvider.m; path = GoogleMusic/GoogleMusicProvider.m; sourceTree = "<group>"; };
-		811314A217FA5FAE0062E77E /* MusicServiceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicServiceProvider.h; sourceTree = "<group>"; };
-		811314A317FA5FAE0062E77E /* MusicServiceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicServiceProvider.m; sourceTree = "<group>"; };
+		811314A217FA5FAE0062E77E /* BaseMusicServiceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMusicServiceProvider.h; sourceTree = "<group>"; };
+		811314A317FA5FAE0062E77E /* BaseMusicServiceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMusicServiceProvider.m; sourceTree = "<group>"; };
+		811314AA17FBA9270062E77E /* AppleMediaKeyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleMediaKeyController.h; sourceTree = "<group>"; };
+		811314AB17FBA9270062E77E /* AppleMediaKeyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleMediaKeyController.m; sourceTree = "<group>"; };
+		811314AC17FBA9270062E77E /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singleton.h; sourceTree = "<group>"; };
+		811314AE17FBACD70062E77E /* MusicServiceProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicServiceProvider.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,14 +130,16 @@
 		8113146E17FA59B20062E77E /* MusicBox */ = {
 			isa = PBXGroup;
 			children = (
-				8113149E17FA5CD30062E77E /* GoogleMusic */,
 				8113147A17FA59B20062E77E /* AppDelegate.h */,
 				8113147B17FA59B20062E77E /* AppDelegate.m */,
-				8113147D17FA59B20062E77E /* MainMenu.xib */,
+				811314AE17FBACD70062E77E /* MusicServiceProvider.h */,
+				811314A217FA5FAE0062E77E /* BaseMusicServiceProvider.h */,
+				811314A317FA5FAE0062E77E /* BaseMusicServiceProvider.m */,
 				8113148017FA59B20062E77E /* Images.xcassets */,
+				8113147D17FA59B20062E77E /* MainMenu.xib */,
+				8113149E17FA5CD30062E77E /* GoogleMusic */,
+				811314A917FBA9270062E77E /* MediaKeys */,
 				8113146F17FA59B20062E77E /* Supporting Files */,
-				811314A217FA5FAE0062E77E /* MusicServiceProvider.h */,
-				811314A317FA5FAE0062E77E /* MusicServiceProvider.m */,
 			);
 			path = MusicBox;
 			sourceTree = "<group>";
@@ -174,6 +181,16 @@
 				811314A017FA5D130062E77E /* GoogleMusicProvider.m */,
 			);
 			name = GoogleMusic;
+			sourceTree = "<group>";
+		};
+		811314A917FBA9270062E77E /* MediaKeys */ = {
+			isa = PBXGroup;
+			children = (
+				811314AA17FBA9270062E77E /* AppleMediaKeyController.h */,
+				811314AB17FBA9270062E77E /* AppleMediaKeyController.m */,
+				811314AC17FBA9270062E77E /* singleton.h */,
+			);
+			path = MediaKeys;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,8 +293,9 @@
 			files = (
 				8113147C17FA59B20062E77E /* AppDelegate.m in Sources */,
 				811314A117FA5D130062E77E /* GoogleMusicProvider.m in Sources */,
-				811314A417FA5FAE0062E77E /* MusicServiceProvider.m in Sources */,
+				811314A417FA5FAE0062E77E /* BaseMusicServiceProvider.m in Sources */,
 				8113147517FA59B20062E77E /* main.m in Sources */,
+				811314AD17FBA9270062E77E /* AppleMediaKeyController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +506,7 @@
 				8113149817FA59B20062E77E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8113149917FA59B20062E77E /* Build configuration list for PBXNativeTarget "MusicBoxTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +515,7 @@
 				8113149B17FA59B20062E77E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,26 +7,42 @@
 //
 
 #import "AppDelegate.h"
-#import "MusicServiceProvider.h"
+#import "BaseMusicServiceProvider.h"
+#import "MediaKeys/AppleMediaKeyController.h"
 #import "GoogleMusic/GoogleMusicProvider.h"
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{    
-    self.provider = [[GoogleMusicProvider alloc] initWithWebView: self.webView];
+{
+    //TODO: To support multiple providers this will need to be dynamic
+    GoogleMusicProvider *provider = [[GoogleMusicProvider alloc] initWithWebView: self.webView];
+    [self setProvider: provider];
+    
+    [AppleMediaKeyController sharedController];
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(playPause) name:MediaKeyPlayPauseNotification object:nil];
+    [center addObserver:self selector:@selector(next) name:MediaKeyNextNotification object:nil];
+    [center addObserver:self selector:@selector(previous) name:MediaKeyPreviousNotification object:nil];
 }
 
--(IBAction)playPause:(id)sender {
+-(void)playPause {
     [self.provider playPause];
+    [self logTrackInfo];
 }
 
--(IBAction)next:(id)sender {
+-(void)next {
     [self.provider next];
+    [self logTrackInfo];
 }
 
--(IBAction)previous:(id)sender {
+-(void)previous {
     [self.provider previous];
+    [self logTrackInfo];
+}
+
+-(void)logTrackInfo {
+    NSLog(@"%@ by %@ on %@", [[self provider] currentTitle], [[self provider] currentArtist], [[self provider] currentAlbum]);
 }
 
 @end

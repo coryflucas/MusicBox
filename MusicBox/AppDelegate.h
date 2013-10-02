@@ -15,10 +15,10 @@
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet WebView *webView;
 
-@property MusicServiceProvider *provider;
+@property id<MusicServiceProvider> provider;
 
--(IBAction)playPause:(id)sender;
--(IBAction)next:(id)sender;
--(IBAction)previous:(id)sender;
+-(void)playPause;
+-(void)next;
+-(void)previous;
 
 @end

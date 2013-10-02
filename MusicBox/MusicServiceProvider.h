@@ -2,21 +2,24 @@
 //  MusicServiceProvider.h
 //  MusicBox
 //
-//  Created by Cory Lucas on 9/30/13.
+//  Created by Cory Lucas on 10/1/13.
 //  Copyright (c) 2013 Cory Lucas. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <WebKit/WebKit.h>
 
-@interface MusicServiceProvider : NSObject
-@property WebView* webView;
-
--(id) initWithWebView:(WebView*) webView;
+@protocol MusicServiceProvider <NSObject>
 
 -(NSString*) baseUrl;
+
+@optional
 -(void) playPause;
 -(void) next;
 -(void) previous;
+-(NSString*) currentArtist;
+-(NSString*) currentTitle;
+-(NSString*) currentAlbum;
+
+-(void) onFrameLoad;
 
 @end

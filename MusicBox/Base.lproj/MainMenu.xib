@@ -113,41 +113,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="950" height="640"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="l2c-dH-nLO">
-                        <rect key="frame" x="421" y="13" width="108" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Play/Pause" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5y6-RD-U4D">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="playPause:" target="494" id="xBe-Tw-IUc"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v2K-CD-GYY">
-                        <rect key="frame" x="529" y="13" width="70" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Next" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c94-aI-eZp">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="next:" target="494" id="2yU-rJ-Kuj"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="djR-8J-30D">
-                        <rect key="frame" x="328" y="13" width="93" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Previous" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zou-7P-LrG">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="previous:" target="494" id="rln-bf-OF3"/>
-                        </connections>
-                    </button>
-                    <webView ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kie-oN-kkF">
-                        <rect key="frame" x="0.0" y="61" width="950" height="579"/>
+                    <webView translatesAutoresizingMaskIntoConstraints="NO" id="kie-oN-kkF">
+                        <rect key="frame" x="0.0" y="0.0" width="950" height="640"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12"/>
                     </webView>
@@ -156,12 +123,7 @@
                     <constraint firstAttribute="trailing" secondItem="kie-oN-kkF" secondAttribute="trailing" id="0sy-2r-WRv"/>
                     <constraint firstItem="kie-oN-kkF" firstAttribute="top" secondItem="372" secondAttribute="top" id="1wp-qP-n7z"/>
                     <constraint firstItem="kie-oN-kkF" firstAttribute="leading" secondItem="372" secondAttribute="leading" id="Eg0-Nt-lx4"/>
-                    <constraint firstItem="kie-oN-kkF" firstAttribute="centerX" secondItem="l2c-dH-nLO" secondAttribute="centerX" id="IA5-Jn-vtY"/>
-                    <constraint firstItem="l2c-dH-nLO" firstAttribute="leading" secondItem="djR-8J-30D" secondAttribute="trailing" constant="12" id="MVW-sC-qWV"/>
-                    <constraint firstAttribute="bottom" secondItem="v2K-CD-GYY" secondAttribute="bottom" constant="20" symbolic="YES" id="U9b-Io-YuF"/>
-                    <constraint firstItem="v2K-CD-GYY" firstAttribute="leading" secondItem="l2c-dH-nLO" secondAttribute="trailing" constant="12" id="UK5-xu-2n8"/>
-                    <constraint firstAttribute="bottom" secondItem="djR-8J-30D" secondAttribute="bottom" constant="20" id="jv7-hu-X8p"/>
-                    <constraint firstAttribute="bottom" secondItem="l2c-dH-nLO" secondAttribute="bottom" constant="20" symbolic="YES" id="yOO-Ec-u3C"/>
+                    <constraint firstAttribute="bottom" secondItem="kie-oN-kkF" secondAttribute="bottom" id="wGI-ho-uWh"/>
                 </constraints>
             </view>
         </window>

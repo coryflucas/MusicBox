@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <WebKit/WebKit.h>
-#import "../MusicServiceProvider.h"
+#import "../BaseMusicServiceProvider.h"
 
-@interface GoogleMusicProvider : MusicServiceProvider
+@interface GoogleMusicProvider : BaseMusicServiceProvider
 
 @end
