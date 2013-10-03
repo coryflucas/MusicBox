@@ -18,7 +18,7 @@
 -(void) previous;
 -(NSString*) currentArtist;
 -(NSString*) currentTitle;
--(NSString*) currentAlbum;
+-(BOOL) isPlaying;
 
 -(void) onFrameLoad;
 

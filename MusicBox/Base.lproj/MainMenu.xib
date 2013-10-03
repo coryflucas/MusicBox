@@ -127,8 +127,31 @@
                 </constraints>
             </view>
         </window>
+        <menu id="HEl-sb-1Rr">
+            <items>
+                <menuItem title="Play" tag="1" id="ToV-Jx-7Ny">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="playPause:" target="494" id="7yp-PW-9gq"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Next" id="MPI-G8-3xV">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="next:" target="494" id="vhS-6s-lnA"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Previous" id="c5o-cV-djd">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="previous:" target="494" id="7Cu-hi-Ikw"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
         <customObject id="494" customClass="AppDelegate">
             <connections>
+                <outlet property="dockMenu" destination="HEl-sb-1Rr" id="gpc-7P-RY4"/>
                 <outlet property="webView" destination="kie-oN-kkF" id="Eeq-mD-uce"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>

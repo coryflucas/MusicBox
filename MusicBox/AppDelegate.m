@@ -16,8 +16,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     //TODO: To support multiple providers this will need to be dynamic
-    GoogleMusicProvider *provider = [[GoogleMusicProvider alloc] initWithWebView: self.webView];
-    [self setProvider: provider];
+    _provider = [[GoogleMusicProvider alloc] initWithWebView: self.webView];
     
     [AppleMediaKeyController sharedController];
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
@@ -26,23 +25,35 @@
     [center addObserver:self selector:@selector(previous) name:MediaKeyPreviousNotification object:nil];
 }
 
--(void)playPause {
-    [self.provider playPause];
-    [self logTrackInfo];
+-(IBAction)playPause:(id)sender {
+    [_provider playPause];
 }
 
--(void)next {
-    [self.provider next];
-    [self logTrackInfo];
+-(IBAction)next:(id)sender {
+    [_provider next];
 }
 
--(void)previous {
-    [self.provider previous];
-    [self logTrackInfo];
+-(IBAction)previous:(id)sender {
+    [_provider previous];
 }
 
--(void)logTrackInfo {
-    NSLog(@"%@ by %@ on %@", [[self provider] currentTitle], [[self provider] currentArtist], [[self provider] currentAlbum]);
+-(NSMenu*)applicationDockMenu:(NSApplication *)sender {
+    NSString* title = @"Nothing Playing...";
+    if([[_provider currentArtist] length] > 0) {
+        title = [NSString stringWithFormat:@"%@ - %@", [_provider currentArtist], [_provider currentTitle]];
+    }
+    NSMenuItem* menuItem = [[NSMenuItem alloc] initWithTitle:title action:nil keyEquivalent:@""];
+    [menuItem setTag:-1];
+    
+    NSMenuItem* oldMenuItem = [[self dockMenu] itemWithTag:-1];
+    if(oldMenuItem) {
+        [[self dockMenu] removeItem:oldMenuItem];
+    }
+    [[self dockMenu] insertItem:menuItem atIndex:0];
+    
+    [[[self dockMenu] itemWithTag:1] setTitle:([_provider isPlaying] ? @"Pause" : @"Play")];
+    
+    return [self dockMenu];
 }
 
 @end

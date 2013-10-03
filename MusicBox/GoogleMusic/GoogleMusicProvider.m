@@ -36,8 +36,8 @@
     return [[self webView] stringByEvaluatingJavaScriptFromString:@"document.getElementById('player-artist').innerHTML"];
 }
 
--(NSString*) currentAlbum {
-    return [[self webView] stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('player-album')[0].innerHTML"];
+-(BOOL) isPlaying {
+    return [[[self webView] stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('playing').length > 0"] isEqualToString:@"true"];
 }
 
 -(void) initStyle {

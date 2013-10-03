@@ -11,14 +11,17 @@
 #import "MusicServiceProvider.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
+{
+    @private
+    id<MusicServiceProvider> _provider;
+}
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet WebView *webView;
+@property (assign) IBOutlet NSMenu *dockMenu;
 
-@property id<MusicServiceProvider> provider;
-
--(void)playPause;
--(void)next;
--(void)previous;
+-(IBAction)playPause:(id)sender;
+-(IBAction)next:(id)sender;
+-(IBAction)previous:(id)sender;
 
 @end
