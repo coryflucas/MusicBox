@@ -13,8 +13,8 @@
 @interface BaseMusicServiceProvider : NSObject <MusicServiceProvider>
 @property WebView* webView;
 
--(id) initWithWebView:(WebView*) webView;
--(void) injectCSS:(NSString*) cssContent;
+- (id)initWithWebView:(WebView *)webView;
+- (void)injectCSS:(NSString *)cssContent;
 
 
 @end

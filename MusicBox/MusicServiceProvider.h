@@ -10,16 +10,15 @@
 
 @protocol MusicServiceProvider <NSObject>
 
--(NSString*) baseUrl;
+- (NSString *)baseUrl;
 
 @optional
--(void) playPause;
--(void) next;
--(void) previous;
--(NSString*) currentArtist;
--(NSString*) currentTitle;
--(BOOL) isPlaying;
-
--(void) onFrameLoad;
+- (void)playPause;
+- (void)next;
+- (void)previous;
+- (NSString *)currentArtist;
+- (NSString *)currentTitle;
+- (BOOL)isPlaying;
+- (void)onFrameLoad;
 
 @end

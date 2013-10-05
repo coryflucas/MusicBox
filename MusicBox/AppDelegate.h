@@ -20,8 +20,8 @@
 @property (assign) IBOutlet WebView *webView;
 @property (assign) IBOutlet NSMenu *dockMenu;
 
--(IBAction)playPause:(id)sender;
--(IBAction)next:(id)sender;
--(IBAction)previous:(id)sender;
+- (IBAction)playPause:(id)sender;
+- (IBAction)next:(id)sender;
+- (IBAction)previous:(id)sender;
 
 @end

@@ -12,35 +12,35 @@
 @implementation GoogleMusicProvider
 @synthesize webView;
 
--(NSString*) baseUrl {
+- (NSString *)baseUrl {
     return @"http://www.google.com/music";
 }
 
--(void) playPause {
+- (void)playPause {
     [self execAction:@"playPause"];
 }
 
--(void) next {
+- (void)next {
     [self execAction:@"nextSong"];
 }
 
--(void) previous {
+- (void)previous {
     [self execAction:@"prevSong"];
 }
 
--(NSString*) currentTitle {
+- (NSString *)currentTitle {
     return [[self webView] stringByEvaluatingJavaScriptFromString:@"document.getElementById('playerSongTitle').innerHTML"];
 }
 
--(NSString*) currentArtist {
+- (NSString *)currentArtist {
     return [[self webView] stringByEvaluatingJavaScriptFromString:@"document.getElementById('player-artist').innerHTML"];
 }
 
--(BOOL) isPlaying {
+- (BOOL)isPlaying {
     return [[[self webView] stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('playing').length > 0"] isEqualToString:@"true"];
 }
 
--(void) initStyle {
+- (void)initStyle {
     NSString *hideGoogleBar = @"#gbzw, #gbx3 {display:none !important;}\n"
                               "#gbx1,#gb #gbx1,#gbq,#gbu,#gb #gbq,#gb #gbu {top:0px !important;}\n"
                               "#gb #gbu {top:0px !important;}\n"
@@ -55,11 +55,11 @@
     [self injectCSS:hideGoogleBar];
 }
 
--(void) execAction:(NSString*) action {
+- (void)execAction:(NSString*) action {
     [[self webView] stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"SJBpost('%@');", action]];
 }
 
--(void) onFrameLoad {
+- (void)onFrameLoad {
     [self initStyle];
 }
 
