@@ -16,6 +16,8 @@
 // Executed on start up
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    [[self window] setCollectionBehavior:NSWindowCollectionBehaviorFullScreenPrimary];
+    
     //TODO: To support multiple providers this will need to be dynamic
     _provider = [[GoogleMusicProvider alloc] initWithWebView: self.webView];
     
