@@ -17,15 +17,15 @@
 }
 
 - (void)playPause {
-    [self execAction:@"playPause"];
+    [self execScript:@"document.getElementsByClassName('flat-button')[2].click()"];
 }
 
 - (void)next {
-    [self execAction:@"nextSong"];
+    [self execScript:@"document.getElementsByClassName('flat-button')[3].click()"];
 }
 
 - (void)previous {
-    [self execAction:@"prevSong"];
+    [self execScript:@"document.getElementsByClassName('flat-button')[1].click()"];
 }
 
 - (NSString *)currentTitle {
@@ -55,8 +55,8 @@
     [self injectCSS:hideGoogleBar];
 }
 
-- (void)execAction:(NSString*) action {
-    [[self webView] stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"SJBpost('%@');", action]];
+- (void)execScript:(NSString*) action {
+    [[self webView] stringByEvaluatingJavaScriptFromString: action];
 }
 
 - (void)onFrameLoad {
